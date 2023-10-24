@@ -150,7 +150,7 @@ export default function App() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const isFormFilled = formData.firstName && formData.phone;
+  const isFormFilled = formData.name && formData.phone;
 
   const [formData1, setFormData1] = useState({
     name: '',
@@ -221,7 +221,7 @@ export default function App() {
                                 <div className="mt-5">
                                     <form action="#" method="POST" onSubmit={sendEmail} class="text-xl text-left mx-5 mt-1 w-auto">
                                       <label htmlFor="" className="pl-1">Как к вам обращаться?</label>
-                                      <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} class="block w-full py-2 mt-2 mb-4 text-white bg-transparent border-0 border-b-2 border-b-gray-400 focus:border-b-purple-500 placeholder:text-gray-400 focus:ring-0 focus:ring-transparent focus:outline-none" placeholder="Ваше имя" required/>
+                                      <input type="text" name="name" value={formData.name} onChange={handleChange} class="block w-full py-2 mt-2 mb-4 text-white bg-transparent border-0 border-b-2 border-b-gray-400 focus:border-b-purple-500 placeholder:text-gray-400 focus:ring-0 focus:ring-transparent focus:outline-none" placeholder="Ваше имя" required/>
                                       <label htmlFor="" className="pl-1">Как с вами связаться?</label>
                                       <PhoneInput  value={formData.phone} onChange={handleChange} />
                                       <label htmlFor="" className="pl-1">Есть ли у вас промокод?</label>
@@ -286,7 +286,7 @@ export default function App() {
             </Dialog>
           </Transition>
           
-          <section className="mx-auto font-kot flex my-auto h-screen">
+          <section className="mx-auto font-kot flex my-auto py-0 lg:py-0 sm:py-[60%] md:py-[30%] h-screen">
             <div className="px-3 sm:px-0">
               <MovingComponent
                 type="fadeIn"
@@ -305,21 +305,21 @@ export default function App() {
                 Вы ищете возможность установить прочное онлайн-<br className="hidden sm:block" />присутствие для вашего бизнеса? Ваш поиск завершен!
               </motion.div>
               <br />
-              <div className="grid grid-cols-2 flex text-center w-full sm:w-1/3 mx-auto links">
+              <div className="grid grid-cols-2 flex text-center w-full lg:w-1/3 mx-auto links">
                 <button className="py-3 rounded-full border-solid border-purple-500 border-2 ostavitbut" onClick={openModal}>
                   Оставить заявку
                 </button>
-                <a href="#about" className="py-4 link hidden sm:block font-norm">
+                <a href="#about" className="py-4 link hidden lg:block font-norm">
                   <p className="font-norm">Узнать большe</p>
                 </a>
-                <a href="#aboutmobile" className="py-4 link block sm:hidden fonr-norm">
+                <a href="#aboutmobile" className="py-4 link block lg:hidden font-norm items-center my-auto">
                   <p className="font-norm">Узнать большe</p>
                 </a>
               </div>
             </div>
           </section>
 
-          <div className="hidden sm:block">
+          <div className="hidden sm:hidden md:hidden lg:block">
 
             <section id="about" className="mx-auto font-kot flex my-auto h-screen">
               <div>
@@ -746,7 +746,7 @@ export default function App() {
             </section>
           </div>
 
-          <main className="block sm:hidden px-4">
+          <main className="lg:hidden md:block sm:block px-4">
             
             <div id="aboutmobile" className="mx-auto font-kot flex my-auto">
               <div>
@@ -1186,7 +1186,7 @@ export default function App() {
                   <p className="text-5xl font-nan text-h text-center">Сделайте первый шаг к вашему онлайн-успеху уже сегодня!</p>
                   <p className="text-md font-norm text-gray-300 mt-4 text-center">Заполните форму снизу, чтобы обсудить ваши требования к проекту, получить персонализированное предложение или назначить консультацию.</p>
                 </div>
-                <div className="pt-8 pb-16" ref={refmobile20}>
+                <div className="pt-8 pb-16 justify-center flex" ref={refmobile20}>
                   <div className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white bg-opacity-10 rounded-lg py-5 px-2 shadow-xl transition-all">
                     <div className='flex items-center'>
                       <div className="text-white w-auto mx-auto text-2xl text-center">
