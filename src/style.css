@@ -51,7 +51,7 @@ section {
   justify-content: center;
   align-items: center;
   scroll-snap-align: center;
-  background: url("../public/bg.png");
+  background: url("/bg.png");
   background-repeat: repeat-y;
   background-size: cover;
   background-position: center;
@@ -65,15 +65,15 @@ section {
     justify-content: center;
     align-items: center;
     scroll-snap-align: none;
-    background: url("../public/bg.png");
-    background-repeat: repeat-y;
+    background: url("/bg.png");
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   }
   main{
-    background: url("../public/bg.png");
-    background-repeat: repeat-y;
+    background: url("/bg.png");
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -141,7 +141,7 @@ section {
 }
 
 .bn5:active {
-  color: #000;
+  color: white;
 }
 
 .bn5:active:after {
@@ -162,6 +162,76 @@ section {
   left: 0;
   top: 0;
   border-radius: 25px;
+}
+
+.bn6 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.bn6:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff00c8,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(25px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn6 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes glowingbn6 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.bn6:active {
+  color: white;
+}
+
+.bn6:active:after {
+  background: transparent;
+}
+
+.bn6:hover:before {
+  opacity: 1;
+}
+
+.bn6:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  left: 0;
+  top: 0;
 }
 
 .distext {
@@ -191,4 +261,32 @@ section {
   border-style: solid;
   background-clip: text;
   color: transparent;
+}
+
+.outer_circle { 
+  position: relative; 
+  margin: 8px; 
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%; 
+  background: #0E091C; 
+} 
+
+.inner_circle { 
+  background-image: linear-gradient(90deg, rgb(251, 226, 226) 0%, rgba(198,176,255,1) 48%, rgb(242, 210, 255) 100%);
+  content: '';
+  position: absolute; 
+  top: -8px; 
+  bottom: -8px; 
+  right: -8px; 
+  left: -8px; 
+  z-index: -1;
+  border-radius: inherit; 
+}
+
+.bgtext {
+  background: url("/textback.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
